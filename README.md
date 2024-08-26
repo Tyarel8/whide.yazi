@@ -23,5 +23,9 @@ prepend_keymap = [
 
 It will apply to all selected or hovered if there is no selection.
 
+> [!IMPORTANT]
+> When hiding a file, yazi will either show the file still normal, or show the file hidden
+> along with the previous normal file until you do something
+> like opening a new tab or closing yazi and opening it again.
 
 

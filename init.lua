@@ -50,6 +50,7 @@ return {
         end
 
         local items = get_paths()
+        local refre = false
 
         for _, it in ipairs(items) do
             if cmd_arg == "" then
@@ -64,6 +65,14 @@ return {
             if err ~= nil then
                 ya.err("whide: command error")
             end
+            if cmd_arg == "+h" then
+                refre = true
+            end
+        end
+
+        if refre then
+            -- doesn't work
+            ya.manager_emit("refresh", {})
         end
     end,
 }
