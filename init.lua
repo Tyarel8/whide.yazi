@@ -37,6 +37,16 @@ end
 
 return {
     entry = function(self, args)
+        if ya.target_family() ~= "windows" then
+            ya.notify {
+                title = "whide error",
+                content = "whide only works on windows",
+                timeout = 3.0,
+                level = "error",
+            }
+            return
+        end
+
         local mode = args[1]
         local cmd_arg = ""
 
