@@ -36,7 +36,7 @@ function is_hidden(file_path)
 end
 
 return {
-    entry = function(self, args)
+    entry = function(self, job)
         if ya.target_family() ~= "windows" then
             ya.notify {
                 title = "whide error",
@@ -47,7 +47,7 @@ return {
             return
         end
 
-        local mode = args[1]
+        local mode = job.args[1]
         local cmd_arg = ""
 
         if mode == "hide" then
@@ -55,7 +55,7 @@ return {
         elseif mode == "unhide" then
             cmd_arg = "-h"
         elseif mode ~= "toggle" then
-            ya.err("whide: no valid arg")
+            ya.err("whide: no valid arg: " .. (mode or ""))
             return
         end
 
@@ -82,7 +82,7 @@ return {
 
         if refre then
             -- doesn't work
-            ya.manager_emit("refresh", {})
+            ya.mgr_emit("refresh", {})
         end
     end,
 }
