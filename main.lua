@@ -17,7 +17,7 @@ local get_paths = ya.sync(function()
     return paths
 end)
 
-function is_hidden(file_path)
+local function is_hidden(file_path)
     local res, err = Command("attrib"):arg(file_path):stdout(Command.PIPED):output()
 
     if err then
