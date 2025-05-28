@@ -5,7 +5,7 @@ A plugin for [yazi](https://github.com/sxyazi/yazi) to hide/unhide files or fold
 ## Installation
 
 ```sh
-ya pack -a 'Tyarel8/whide'
+ya pkg add 'Tyarel8/whide'
 ```
 
 ## Usage
