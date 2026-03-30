@@ -82,7 +82,7 @@ return {
 
         if refre then
             -- doesn't work
-            ya.mgr_emit("refresh", {})
+            ya.emit("refresh", {})
         end
     end,
 }
